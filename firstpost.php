@@ -4,7 +4,7 @@
 		<title>My Favorite Food</title>
 	</head>
 	<body>
-		<h2>This Is a List of My Favorite Beans/h2>
+		<h2>This Is a List of My Favorite Beans</h2>
 
 		<ul>
 			<li>Lima</li>
