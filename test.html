@@ -1,0 +1,32 @@
+CREATE TABLE ramChip (
+productName INT UNSIGNED AUTO_INCREMENT NOT NULL,
+price VARCHAR(8) NOT NULL,
+builds VARCHAR(128),
+INDEX(profileId),
+INDEX(productName),
+FOREIGN KEY (profileId) REFERENCES userProfile(profileId),
+FOREIGN KEY(productName) REFERENCES ratings(stars),
+PRIMARY KEY (profileId, productName)
+);
+
+
+CREATE TABLE ratings (
+profileId INT UNSIGNED NOT NULL,
+stars VARCHAR (5) NOT NULL,
+INDEX(profileId),
+FOREIGN KEY(profileId) REFERENCES userProfile(profileId),
+PRIMARY KEY(productName)
+);
+
+DROP TABLE IF EXISTS ramChip;
+DROP TABLE IF EXISTS userProfile;
+DROP TABLE IF EXISTS ratings;
+
+CREATE TABLE userProfile (
+profileId INT UNSIGNED AUTO_INCREMENT NOT NULL,
+email VARCHAR(128) NOT NULL,
+comments VARCHAR (128),
+about VARCHAR(128),
+UNIQUE(email),
+PRIMARY KEY(profileId)
+);
